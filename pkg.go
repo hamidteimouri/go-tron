@@ -4,6 +4,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"github.com/hamidteimouri/gotron/base58"
+	"strings"
 )
 
 func S256(s []byte) []byte {
@@ -40,4 +41,12 @@ func Base58ToHex(str string) (string, error) {
 	hexStr := hex.EncodeToString(address)
 
 	return hexStr, nil
+}
+
+func ConvertHexFormat(inputHex string) string {
+	// Replace "0x" with an empty string
+	outputHex := strings.Replace(inputHex, "0x", "", 1)
+
+	// Prepend "41" to the resulting string
+	return "41" + outputHex
 }
