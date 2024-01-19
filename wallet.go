@@ -66,7 +66,7 @@ func getPublicKeyFromPrivateKey(privateKey *ecdsa.PrivateKey) (*ecdsa.PublicKey,
 
 	publicKeyECDSA, ok := publicKey.(*ecdsa.PublicKey)
 	if !ok {
-		return nil, errors.New("error in getting public key")
+		return nil, errors.New("failed to cast public-key")
 	}
 
 	return publicKeyECDSA, nil
