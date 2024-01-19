@@ -3,7 +3,7 @@ package gotron
 import (
 	"crypto/sha256"
 	"encoding/hex"
-	"github.com/mr-tron/base58"
+	"github.com/hamidteimouri/gotron/base58"
 )
 
 func S256(s []byte) []byte {
@@ -12,6 +12,7 @@ func S256(s []byte) []byte {
 	bs := h.Sum(nil)
 	return bs
 }
+
 func HexToBase58(str string) (string, error) {
 	addb, err := hex.DecodeString(str)
 	if err != nil {
