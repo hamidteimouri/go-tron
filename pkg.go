@@ -50,3 +50,11 @@ func ConvertHexFormat(inputHex string) string {
 	// Prepend "41" to the resulting string
 	return "41" + outputHex
 }
+
+// Remove0x Decode decodes a hex string with 0x prefix.
+func Remove0x(input string) string {
+	if strings.HasPrefix(input, "0x") {
+		return input[2:]
+	}
+	return input
+}
